@@ -25,7 +25,7 @@ RUN cd $INSTALL_DIR                                                             
     wget -c https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.5.tar.bz2 && \
     tar xf openmpi-4.1.5.tar.bz2                                                      && \
     cd openmpi-4.1.5                                                                  && \
-    ./configure --enable-oshmem --prefix=$INSTALL_DIR/openmpi-4.1.5/install              \
+    ./configure --prefix=$INSTALL_DIR/openmpi-4.1.5/install              \
                 --with-ucx=/home/shmem/ucx-master/install                             && \
     make -j && make install
 
