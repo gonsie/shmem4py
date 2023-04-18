@@ -5,7 +5,7 @@ RUN mkdir /home/shmem
 
 RUN dnf update -y && \
     dnf install -y git vim wget pkg-config make automake gcc gcc-c++ kernel-devel libtool lbzip2 hwloc hwloc-devel \
-                   pmix pmix-devel libevent libevent-devel python3 python3-devel python3-pip && \
+                   pmix pmix-devel libevent libevent-devel python3 python3-devel python3-pip                    && \
     dnf clean all
 
 RUN cd $INSTALL_DIR                                                                                                  && \
@@ -18,7 +18,7 @@ RUN cd $INSTALL_DIR                                                             
     wget -c https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.5.tar.bz2 && \
     tar xf openmpi-4.1.5.tar.bz2                                                      && \
     cd openmpi-4.1.5                                                                  && \
-    ./configure --prefix=$INSTALL_DIR/openmpi-4.1.5/install              \
+    ./configure --prefix=$INSTALL_DIR/openmpi-4.1.5/install                              \
                 --with-ucx=/home/shmem/ucx-master/install                             && \
     make -j && make install
 
